@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 
 use App\Orchid\Screens\TaskScreen;
+use App\Orchid\Screens\ClubRegistrationScreen;
+use App\Orchid\Screens\IndividualRegistrationScreen;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,9 +107,23 @@ Route::screen('/examples/cards', ExampleCardsScreen::class)->name('platform.exam
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');
 Route::screen('task', TaskScreen::class)
-    ->name('platform.task')
+->name('platform.task')
+->breadcrumbs(function (Trail $trail){
+	return $trail
+		->parent('platform.index')
+		->push('Task');
+});
+Route::screen('clubs', ClubRegistrationScreen::class)
+    ->name('platform.club-registration')
     ->breadcrumbs(function (Trail $trail){
         return $trail
             ->parent('platform.index')
-            ->push('Task');
+            ->push('Club');
     });
+Route::screen('individuals', IndividualRegistrationScreen::class)
+	->name('platform.individual-registration')
+	->breadcrumbs(function (Trail $trail){
+		return $trail
+			->parent('platform.index')
+			->push('Individual');
+	});

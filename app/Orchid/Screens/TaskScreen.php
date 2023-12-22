@@ -23,7 +23,7 @@ class TaskScreen extends Screen
      */
 	public function name(): ?string
 	{
-		return 'Simple To-Do List';
+		return 'Club Regisration';
 	}
 	
 	/**
@@ -31,7 +31,7 @@ class TaskScreen extends Screen
 	 */
 	public function description(): ?string
 	{
-		return 'Orchid Quickstart';
+		return 'Club wise member registration';
 	}
 
     /**

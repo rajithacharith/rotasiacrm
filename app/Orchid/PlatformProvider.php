@@ -39,15 +39,18 @@ class PlatformProvider extends OrchidServiceProvider
                 ->title('Navigation')
                 ->route(config('platform.index')),
 
-            Menu::make('Sample Screen')
-                ->icon('bs.collection')
-                ->route('platform.example')
-                ->badge(fn () => 6),
+			Menu::make('Club Registration')
+				->icon('bs.collection')
+				->route('platform.club-registration'),
+
+			Menu::make('Individual Registration')
+				->icon('bs.collection')
+				->route('platform.individual-registration'),
 
             Menu::make('Form Elements')
                 ->icon('bs.card-list')
                 ->route('platform.example.fields')
-                ->active('*/examples/form/*'),
+                ->active(''),
 
             Menu::make('Overview Layouts')
                 ->icon('bs.window-sidebar')
@@ -65,6 +68,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bs.card-text')
                 ->route('platform.example.cards')
                 ->divider(),
+
+			Menu::make('Tasks')
+				->icon('bag')
+				->route('platform.task')
+				->title('Tools'),
 
             Menu::make(__('Users'))
                 ->icon('bs.people')

@@ -15,17 +15,8 @@ class ExampleElements extends TabMenu
     protected function navigations(): iterable
     {
         return [
-            Menu::make('Basic Elements')
-                ->route('platform.example.fields'),
-
-            Menu::make('Advanced Elements')
-                ->route('platform.example.advanced'),
-
-            Menu::make('Text Editors')
-                ->route('platform.example.editors'),
-
-            Menu::make('Run Actions')
-                ->route('platform.example.actions'),
+            Menu::make('Basic Details')
+                ->route('platform.club-registration'),
         ];
     }
 }
