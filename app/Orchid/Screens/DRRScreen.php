@@ -4,7 +4,7 @@ namespace App\Orchid\Screens;
 
 use Orchid\Screen\Screen;
 
-class TaskScreen extends Screen
+class DRRScreen extends Screen
 {
     /**
      * Fetch data to be displayed on the screen.
@@ -21,18 +21,10 @@ class TaskScreen extends Screen
      *
      * @return string|null
      */
-	public function name(): ?string
-	{
-		return 'Club Regisration';
-	}
-	
-	/**
-	 * The description is displayed on the user's screen under the heading
-	 */
-	public function description(): ?string
-	{
-		return 'Club wise member registration';
-	}
+    public function name(): ?string
+    {
+        return 'DRRScreen';
+    }
 
     /**
      * The screen's action buttons.

@@ -28,6 +28,10 @@ return new class extends Migration
 			$table->string('payment_method');
 			//store payment type
 			$table->string('payment_type');
+			//district id
+			$table->foreignId('district_id')->constrained();
+			//drr id
+			$table->foreignId('drr_id')->constrained();
             $table->timestamps();
         });
     }

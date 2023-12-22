@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('payment_item', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->boolean('active')->default(1);
+			$table->string('name');
+			$table->string('description');
+			//related to payment table forignID
+			$table->foreignId('payment_id')->constrained();
+			//poly relation to different tables like nominees, drrs, clubs
+			$table->morphs('payable');
             $table->timestamps();
         });
     }
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tasks');
+        Schema::dropIfExists('payment_item');
     }
 };
